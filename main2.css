@@ -1,0 +1,36 @@
+html{
+    font-size: 18px;
+}
+body{
+    background-color: rgb(243, 241, 241);
+    color: rgb(8, 1, 1);
+}
+#header{
+    background-color: #276eb6;
+    padding: 10px;
+    text-align: center;
+}
+#about{
+    background-color: #888686;
+    padding: 10px;
+    text-align: center;
+}
+#introduction{
+    background-color: #b6b6b6;
+    padding: 10px;
+    text-align: center;
+}
+#contact{
+    background-color: #919090;
+    padding: 10px;
+    text-align:left;
+}
+.center-list {
+      text-align: center; /* Centers the list items horizontally */
+      list-style: none; /* Removes default bullet points */
+    }
+    nav {
+      text-align: left; /* Centers the navigation links */
+      margin-top: 20px; /* Adds some space above the navigation */
+    }
+
