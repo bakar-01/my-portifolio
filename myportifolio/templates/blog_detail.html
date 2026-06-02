@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>{{ post.title }} - {{ profile.name }}</title>
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+  <style>.post-hero{border-radius:8px;aspect-ratio:16/9;object-fit:cover;width:100%;}.post-body{font-size:1.05rem;line-height:1.8;}</style>
+</head>
+<body>
+  <main class="main">
+    <article class="section">
+      <div class="container section-title">
+        <p><a href="{% url 'index' %}#blog"><i class="bi bi-arrow-left"></i> Back to blog</a></p>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.excerpt }}</p>
+      </div>
+      <div class="container">
+        <img src="{% static post.image %}" class="post-hero mb-4" alt="{{ post.title }}">
+        <div class="post-body">{{ post.content|linebreaks }}</div>
+      </div>
+    </article>
+  </main>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>{{ profile.name }} - Resume</title>
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+</head>
+<body>
+  <main class="main">
+    <section class="section">
+      <div class="container section-title">
+        <p><a href="{% url 'index' %}"><i class="bi bi-arrow-left"></i> Back to portfolio</a></p>
+        <h2>{{ profile.name }} Resume</h2>
+        <p>{{ resume.summary|default:profile.bio }}</p>
+        {% if resume.download_url %}
+          <a href="{{ resume.download_url }}" class="btn btn-primary"><i class="bi bi-download me-2"></i>Download Resume</a>
+        {% endif %}
+      </div>
+      <div class="container resume">
+        <div class="row">
+          <div class="col-lg-6">
+            <h3 class="resume-title">Education</h3>
+            {% for item in education %}
+              <div class="resume-item">
+                <h4>{{ item.degree }}</h4>
+                <h5>{{ item.period }}</h5>
+                <p><em>{{ item.school }}</em></p>
+                <p>{{ item.description }}</p>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="col-lg-6">
+            <h3 class="resume-title">Experience</h3>
+            {% for item in experience %}
+              <div class="resume-item">
+                <h4>{{ item.role }}</h4>
+                <h5>{{ item.period }}</h5>
+                <p><em>{{ item.company }}{% if item.location %}, {{ item.location }}{% endif %}</em></p>
+                <p>{{ item.description|linebreaksbr }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="skills section">
+          <h3 class="resume-title">Skills</h3>
+          <div class="row skills-content skills-animation">
+            {% for skill in skills %}
+              <div class="col-lg-6">
+                <div class="progress">
+                  <span class="skill"><span>{{ skill.name }}</span> <i class="val">{{ skill.proficiency }}%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ skill.proficiency }}" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
