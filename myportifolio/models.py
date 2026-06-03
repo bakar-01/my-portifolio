@@ -14,7 +14,7 @@ class TimestampedModel(models.Model):
 class SiteProfile(TimestampedModel):
     name = models.CharField(max_length=120)
     title = models.CharField(max_length=160, default="Full Stack Developer")
-    tagline = models.CharField(max_length=255, blank=True)
+    tagline = models.CharField(max_length=1000000, blank=True)
     bio = models.TextField()
     profile_image = models.CharField(
         max_length=255,

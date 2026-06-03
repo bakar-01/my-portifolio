@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-k%-dx%ei*&d+vr5jhd(1@v7!cr+=9ch7&a6dtja@si5w&@1s4@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ritzy-mandolin-strongbox.ngrok-free.dev', '127.0.0.1',]
 
 
 # Application definition

@@ -23,6 +23,11 @@
     .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
     .cta-row .btn { border-radius: 6px; padding: 10px 18px; }
     .header .social-links a.whatsapp:hover { color: #25d366; }
+    .about-profile-image { width: 100%; height: 100%; min-height: 420px; object-fit: cover; border-radius: 8px; }
+    .blog-meta { color: color-mix(in srgb, var(--default-color), transparent 35%); font-size: 0.9rem; margin-bottom: 10px; }
+    @media (max-width: 991px) {
+      .about-profile-image { aspect-ratio: 4 / 5; height: auto; min-height: 0; }
+    }
   </style>
 </head>
 <body class="index-page">
@@ -77,9 +82,9 @@
         <p>{{ profile.tagline|default:profile.bio }}</p>
       </div>
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 justify-content-center">
+        <div class="row gy-4 justify-content-center align-items-stretch">
           <div class="col-lg-4">
-            <img src="{% static profile.profile_image %}" class="img-fluid" alt="{{ profile.name }}">
+            <img src="{% static profile.profile_image %}" class="about-profile-image" alt="{{ profile.name }}">
           </div>
           <div class="col-lg-8 content">
             <h2>{{ profile.title }}</h2>
@@ -142,12 +147,13 @@
         <div class="row">
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <h3 class="resume-title">Education</h3>
-            {% for item in education %}
+            {% for item in education|slice:":1" %}
               <div class="resume-item">
                 <h4>{{ item.degree }}</h4>
                 <h5>{{ item.period }}</h5>
                 <p><em>{{ item.school }}</em></p>
                 <p>{{ item.description }}</p>
+                <a href="{% url 'resume' %}" class="readmore"><span>View full education history</span><i class="bi bi-arrow-right"></i></a>
               </div>
             {% empty %}
               <p>Add education records from the Django admin.</p>
@@ -155,12 +161,13 @@
           </div>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <h3 class="resume-title">Experience</h3>
-            {% for item in experience %}
+            {% for item in experience|slice:":1" %}
               <div class="resume-item">
                 <h4>{{ item.role }}</h4>
                 <h5>{{ item.period }}</h5>
                 <p><em>{{ item.company }}{% if item.location %}, {{ item.location }}{% endif %}</em></p>
                 <p>{{ item.description|linebreaksbr }}</p>
+                <a href="{% url 'resume' %}" class="readmore"><span>View full experience history</span><i class="bi bi-arrow-right"></i></a>
               </div>
             {% empty %}
               <p>Add experience records from the Django admin.</p>
@@ -262,6 +269,7 @@
               <article class="blog-card">
                 <img src="{% static post.image %}" alt="{{ post.title }}">
                 <div class="content">
+                  <div class="blog-meta"><i class="bi bi-clock me-1"></i>{{ post.created_at|date:"M d, Y" }} at {{ post.created_at|time:"g:i A" }}</div>
                   <h4><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
                   <p>{{ post.excerpt }}</p>
                   <a href="{{ post.get_absolute_url }}" class="readmore"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
