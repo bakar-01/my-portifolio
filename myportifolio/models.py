@@ -14,7 +14,7 @@ class TimestampedModel(models.Model):
 class SiteProfile(TimestampedModel):
     name = models.CharField(max_length=120)
     title = models.CharField(max_length=160, default="Full Stack Developer")
-    tagline = models.CharField(max_length=1000000, blank=True)
+    tagline = models.TextField(blank=True)
     bio = models.TextField()
     profile_image = models.CharField(
         max_length=255,
@@ -43,7 +43,7 @@ class SiteProfile(TimestampedModel):
 
     class Meta:
         verbose_name = "site profile"
-        verbose_name_plural = "site profile"
+        verbose_name_plural = "site profiles"
 
     def __str__(self):
         return self.name
@@ -98,7 +98,7 @@ class Resume(TimestampedModel):
 
     class Meta:
         verbose_name = "resume"
-        verbose_name_plural = "resume"
+        verbose_name_plural = "resumes"
 
     def __str__(self):
         return "Resume"

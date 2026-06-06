@@ -1,0 +1,1499 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2026-06-02T20:27:10.527Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "Bakari Tungwa",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2026-06-02T20:31:40.679Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "Bakari Tungwa",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Bio\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2026-06-02T20:33:34.475Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "Bakari Tungwa",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Typed roles\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2026-06-03T17:17:22.298Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "Bakari Tungwa",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tagline\", \"Bio\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2026-06-03T17:24:16.662Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "Bakari Tungwa",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Title\", \"Tagline\", \"Bio\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2026-06-03T17:37:06.884Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "Bakari Tungwa",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tagline\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2026-06-03T17:55:06.166Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "MATHEMATICS AND COMPUTER SCIENCE",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2026-06-03T17:59:44.177Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "3",
+    "object_repr": "CERTIFICATE IN COMPUTER PACKAGES",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2026-06-03T18:02:07.211Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "4",
+    "object_repr": "KENYA CERTIFICATE OF SECONDARY EDUCATION",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2026-06-03T18:04:41.826Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "5",
+    "object_repr": "KENYA CERTIFICATE OF PRIMARY EDUCATION",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2026-06-03T18:08:52.797Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "Software Engineering",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2026-06-03T18:12:11.340Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "SOFTWARE ENGINEERING INTERN",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2026-06-03T18:13:37.786Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "3",
+    "object_repr": "DATA ANALYST INTERN",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2026-06-03T18:16:36.600Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "IT ASSISTANT",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2026-06-03T18:18:51.173Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "5",
+    "object_repr": "TALLY CLERK",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2026-06-03T18:19:51.010Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "6",
+    "object_repr": "DATA ENTRY SPECIALIST",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2026-06-03T18:20:07.192Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "Django Developer",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2026-06-03T18:20:12.623Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "5",
+    "object_repr": "TALLY CLERK",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Order\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2026-06-03T19:09:00.656Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "MATHEMATICS AND COMPUTER SCIENCE",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2026-06-03T19:09:57.848Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "MATHEMATICS AND COMPUTER SCIENCE",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2026-06-03T19:13:08.920Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "MATHEMATICS AND COMPUTER SCIENCE",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2026-06-03T20:09:15.229Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "Bakari Tungwa",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Facebook\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2026-06-03T20:16:34.544Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "Bakari Tungwa",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Twitter\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2026-06-04T13:37:20.583Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "4",
+    "object_repr": "Billing System",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2026-06-04T13:43:11.687Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "5",
+    "object_repr": "AI Powered Breathing Exercise",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2026-06-04T13:46:25.410Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "6",
+    "object_repr": "Watch Brand Portifolio Gallery",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2026-06-04T13:50:42.746Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "7",
+    "object_repr": "Django Portifolio Web App",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2026-06-04T13:51:41.158Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "7",
+    "object_repr": "Django Portifolio Web App",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2026-06-04T13:56:04.779Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "7",
+    "object_repr": "Django Portifolio Web App",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add blog post",
+    "content_type": 7,
+    "codename": "add_blogpost"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change blog post",
+    "content_type": 7,
+    "codename": "change_blogpost"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete blog post",
+    "content_type": 7,
+    "codename": "delete_blogpost"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view blog post",
+    "content_type": 7,
+    "codename": "view_blogpost"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add contact message",
+    "content_type": 8,
+    "codename": "add_contactmessage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change contact message",
+    "content_type": 8,
+    "codename": "change_contactmessage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete contact message",
+    "content_type": 8,
+    "codename": "delete_contactmessage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view contact message",
+    "content_type": 8,
+    "codename": "view_contactmessage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add education",
+    "content_type": 9,
+    "codename": "add_education"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change education",
+    "content_type": 9,
+    "codename": "change_education"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete education",
+    "content_type": 9,
+    "codename": "delete_education"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view education",
+    "content_type": 9,
+    "codename": "view_education"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add experience",
+    "content_type": 10,
+    "codename": "add_experience"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change experience",
+    "content_type": 10,
+    "codename": "change_experience"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete experience",
+    "content_type": 10,
+    "codename": "delete_experience"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view experience",
+    "content_type": 10,
+    "codename": "view_experience"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add project",
+    "content_type": 11,
+    "codename": "add_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change project",
+    "content_type": 11,
+    "codename": "change_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete project",
+    "content_type": 11,
+    "codename": "delete_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view project",
+    "content_type": 11,
+    "codename": "view_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add resume",
+    "content_type": 12,
+    "codename": "add_resume"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change resume",
+    "content_type": 12,
+    "codename": "change_resume"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete resume",
+    "content_type": 12,
+    "codename": "delete_resume"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view resume",
+    "content_type": 12,
+    "codename": "view_resume"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add service",
+    "content_type": 13,
+    "codename": "add_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change service",
+    "content_type": 13,
+    "codename": "change_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete service",
+    "content_type": 13,
+    "codename": "delete_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view service",
+    "content_type": 13,
+    "codename": "view_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add site profile",
+    "content_type": 14,
+    "codename": "add_siteprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change site profile",
+    "content_type": 14,
+    "codename": "change_siteprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete site profile",
+    "content_type": 14,
+    "codename": "delete_siteprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view site profile",
+    "content_type": 14,
+    "codename": "view_siteprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 57,
+  "fields": {
+    "name": "Can add skill",
+    "content_type": 15,
+    "codename": "add_skill"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 58,
+  "fields": {
+    "name": "Can change skill",
+    "content_type": 15,
+    "codename": "change_skill"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 59,
+  "fields": {
+    "name": "Can delete skill",
+    "content_type": 15,
+    "codename": "delete_skill"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 60,
+  "fields": {
+    "name": "Can view skill",
+    "content_type": 15,
+    "codename": "view_skill"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$jjB2H4G3lOJ6YeJ8KWAAMU$xUJW6TVLvWXPnC2rKdzTw0HgXikMfGphXvcEMIw1l1I=",
+    "last_login": "2026-06-02T22:54:27.375Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "bakaritungwa22@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-02T20:00:23.099Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "myportifolio",
+    "model": "blogpost"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "myportifolio",
+    "model": "contactmessage"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "myportifolio",
+    "model": "education"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "myportifolio",
+    "model": "experience"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "myportifolio",
+    "model": "project"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "myportifolio",
+    "model": "resume"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "myportifolio",
+    "model": "service"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "myportifolio",
+    "model": "siteprofile"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 15,
+  "fields": {
+    "app_label": "myportifolio",
+    "model": "skill"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "axx8hdq3dp5ix8eusxtvlnd74yrio1oc",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHglEdduvcbyDADUjWQlHZl_HfbpAvd3nPOfYuA61LC2tMcJhYXocXpd4tIz1R3wA-s9yap1WWeotwVedAub43T63q4fwcFe9lqnxSCRxfBgiOgYfQ2AWZmxWSTydGg2RyKTKgHBc4CgNeZlFfj2YnPF_t2OCU:1wUY0B:iF6kp-sMeYFVZKZ0TIzmpRFb7CII1jLXeeSYUXxaCmo",
+    "expire_date": "2026-06-16T22:54:27.382Z"
+  }
+},
+{
+  "model": "myportifolio.siteprofile",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-06-02T19:33:24.054Z",
+    "updated_at": "2026-06-02T19:33:24.054Z",
+    "name": "Bakari Tungwa",
+    "title": "Full Stack Django Developer",
+    "tagline": "Responsive portfolio websites, business apps, and database-backed web systems.",
+    "bio": "I build clean, responsive web experiences with Django, Bootstrap, JavaScript, and practical admin workflows that make content easy to manage.",
+    "profile_image": "assets/img/hero3.jpeg",
+    "hero_image": "assets/img/hero3.jpeg",
+    "typed_roles": "Django Developer, Web Designer, Freelancer, Problem Solver",
+    "birthday": "",
+    "website": "https://example.com",
+    "phone": "+254 700 000 000",
+    "city": "Nairobi, Kenya",
+    "degree": "Software Engineering",
+    "email": "hello@example.com",
+    "freelance_status": "Available",
+    "address": "Nairobi, Kenya",
+    "twitter": "",
+    "facebook": "https://www.facebook.com/",
+    "instagram": "https://www.instagram.com/",
+    "whatsapp": "https://wa.me/254700000000",
+    "linkedin": "https://www.linkedin.com/"
+  }
+},
+{
+  "model": "myportifolio.siteprofile",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-06-02T20:27:10.523Z",
+    "updated_at": "2026-06-03T20:16:34.540Z",
+    "name": "Bakari Tungwa",
+    "title": "Full Stack Developer and A Data Analyst",
+    "tagline": "Mathematics and Computer Science graduate with a strong foundation in Microsoft technologies, computer networks, cloud services, data analysis, software engineering, statistics, mathematics, and computer systems. Currently working as a Software Developer and Data Analyst, with experience in developing scalable software solutions, analyzing data, and transforming insights into actionable business decisions.  Proficient in using technology and data-driven approaches to improve operational efficiency, support business growth, and solve complex problems. Possesses strong analytical, organizational, communication, and customer service skills, with the ability to adapt quickly to dynamic work environments.  Passionate about software development, data analytics, administrative operations, and sales, and eager to contribute to a forward-thinking organization while continuing to grow professionally in engineering, technology, and business-related roles.",
+    "bio": "I Develop and maintain both front-end and back-end components of web applications.\r\nDesigning and implementing APIs and also use data to drive decision making and business performance.",
+    "profile_image": "assets/img/hero3.jpeg",
+    "hero_image": "assets/img/hero3.jpeg",
+    "typed_roles": "A Software Developer, A Designer, A Content creator, A Data Analyst",
+    "birthday": "25th July 2002",
+    "website": "",
+    "phone": "0113444553",
+    "city": "Mombasa",
+    "degree": "Bsc. Mathematics and Computer Science",
+    "email": "bakaritungwa22@gmail.com",
+    "freelance_status": "Available",
+    "address": "80100 - Mombasa, Kenya",
+    "twitter": "https://x.com/Rashyy_02",
+    "facebook": "https://www.facebook.com/share/1EUxhMRZ7C/",
+    "instagram": "http://instagram.com/ra.bad_tu",
+    "whatsapp": "https://wa.me/254113444553",
+    "linkedin": "https://www.linkedin.com/in/bakari-tungwa-087058346/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BbyuuQxLGRsmGIaod5o%2BB6g%3D%3D"
+  }
+},
+{
+  "model": "myportifolio.skill",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-06-02T19:33:24.065Z",
+    "updated_at": "2026-06-02T19:33:24.065Z",
+    "name": "HTML",
+    "proficiency": 95,
+    "order": 1
+  }
+},
+{
+  "model": "myportifolio.skill",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-06-02T19:33:24.067Z",
+    "updated_at": "2026-06-02T19:33:24.067Z",
+    "name": "CSS",
+    "proficiency": 90,
+    "order": 2
+  }
+},
+{
+  "model": "myportifolio.skill",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-06-02T19:33:24.069Z",
+    "updated_at": "2026-06-02T19:33:24.069Z",
+    "name": "JavaScript",
+    "proficiency": 82,
+    "order": 3
+  }
+},
+{
+  "model": "myportifolio.skill",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-06-02T19:33:24.070Z",
+    "updated_at": "2026-06-02T19:33:24.070Z",
+    "name": "Python",
+    "proficiency": 88,
+    "order": 4
+  }
+},
+{
+  "model": "myportifolio.skill",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-06-02T19:33:24.071Z",
+    "updated_at": "2026-06-02T19:33:24.071Z",
+    "name": "Django",
+    "proficiency": 90,
+    "order": 5
+  }
+},
+{
+  "model": "myportifolio.skill",
+  "pk": 6,
+  "fields": {
+    "created_at": "2026-06-02T19:33:24.073Z",
+    "updated_at": "2026-06-02T19:33:24.073Z",
+    "name": "Bootstrap",
+    "proficiency": 86,
+    "order": 6
+  }
+},
+{
+  "model": "myportifolio.education",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-06-03T17:55:06.164Z",
+    "updated_at": "2026-06-03T19:13:08.917Z",
+    "degree": "MATHEMATICS AND COMPUTER SCIENCE",
+    "school": "Meru University Of Science and Technology",
+    "period": "August 2021 - October 2025",
+    "description": "ò Focused on software engineering, databases, software design, data analytics and deployment. I did Research and educational projects.\r\nò Participated in software development projects involving web and desktop applications.\r\nò Conducted data analysis and statistical modeling using tools such as Python, Excel, SQL, and Power BI.\r\nò Applied mathematical techniques to solve real-world problems in optimization, probability, and statistics.\r\nò Developed and maintained databases using SQL and database management systems.\r\nò Participated in programming assignments and coding challenges to strengthen problem-solving skills.\r\nò Collaborated with peers on group projects involving system design, software engineering, and data-driven solutions.\r\nò Performed research and presented findings on mathematical and computing topics. \r\nò Designed and implemented algorithms and data structures for efficient problem-solving. \r\nò Gained experience in computer networking, cloud computing, and system administration concepts. \r\nò Created data visualizations and dashboards to support decision-making processes. \r\nò Utilized version control systems such as GitHub for project management and collaboration. \r\nò Attended workshops, seminars, hackathons, and technology conferences to enhance technical knowledge. \r\nò Participated in industrial attachment/internship programs, applying academic knowledge in professional environments. \r\nò Provided peer tutoring and academic support in mathematics, statistics, and programming subjects. \r\nò Developed analytical, communication, teamwork, and project management skills through academic and extracurricular activities.",
+    "order": 0
+  }
+},
+{
+  "model": "myportifolio.education",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-06-03T17:59:44.173Z",
+    "updated_at": "2026-06-03T17:59:44.173Z",
+    "degree": "CERTIFICATE IN COMPUTER PACKAGES",
+    "school": "Kinango Datacom Computers",
+    "period": "May 2021 - July 2021",
+    "description": "TECHNOLOGIES I LEARNED:\r\nMicrosoft word.\r\nMicrosoft excel.\r\nMicrosoft powerpoint.\r\nMicrosoft access.\r\nComputerized speed typing.\r\nConcepts of internet.",
+    "order": 1
+  }
+},
+{
+  "model": "myportifolio.education",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-06-03T18:02:07.209Z",
+    "updated_at": "2026-06-03T18:02:07.209Z",
+    "degree": "KENYA CERTIFICATE OF SECONDARY EDUCATION",
+    "school": "Kinango Boys High School",
+    "period": "January 2017 - April 2021",
+    "description": "I attained a mean grade of B+ of 70 points.",
+    "order": 2
+  }
+},
+{
+  "model": "myportifolio.education",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-06-03T18:04:41.822Z",
+    "updated_at": "2026-06-03T18:04:41.822Z",
+    "degree": "KENYA CERTIFICATE OF PRIMARY EDUCATION",
+    "school": "Yapha Primary School",
+    "period": "2008 - 2016",
+    "description": "I attained a total of 325 marks.",
+    "order": 3
+  }
+},
+{
+  "model": "myportifolio.experience",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-06-03T18:12:11.338Z",
+    "updated_at": "2026-06-03T18:12:11.338Z",
+    "role": "SOFTWARE ENGINEERING INTERN",
+    "company": "Swahilipot Hub Foundation",
+    "period": "May 2025 - August 2025",
+    "location": "Mombasa, Kenya",
+    "description": "Built a task management app using python (Django framework).  \r\nò Debagged and tested Django applications.  \r\nò Agile software development.  \r\nò Task management using Trello.",
+    "order": 0
+  }
+},
+{
+  "model": "myportifolio.experience",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-06-03T18:13:37.782Z",
+    "updated_at": "2026-06-03T18:13:37.782Z",
+    "role": "DATA ANALYST INTERN",
+    "company": "Swahilipot Hub Foundation",
+    "period": "May 2025 - August 2025",
+    "location": "Mombasa, Kenya",
+    "description": "o Data collection using online forms.  \r\no Analysed customer feedback data using Excel and Power BI to uncover \r\ntrends, helping the marketing team improve engagement strategies. \r\no Built interactive dashboards that tracked campaign performance across social \r\nplatforms.  \r\no Cleaned and transformed large Excel datasets using Python and pandas for \r\nreporting.  \r\no Presented weekly insights to supervisors, improving decision-making speed.  \r\no Analysed data using python (Google Colab).",
+    "order": 1
+  }
+},
+{
+  "model": "myportifolio.experience",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-06-03T18:16:36.587Z",
+    "updated_at": "2026-06-03T18:16:36.587Z",
+    "role": "IT ASSISTANT",
+    "company": "Kinango Datacom Computers",
+    "period": "April 2022 - August 2023",
+    "location": "Kwale, Kenya",
+    "description": "ò Provided front desk assistance to customers and visitors. \r\nò Provided first-line IT support to staff, resolving hardware, software, and \r\nnetwork-related issues efficiently.  \r\nò Assisted in installation, configuration, and maintenance of desktops, laptops, \r\nprinters, and other peripheral devices.  \r\nò Supported users with Microsoft Office 365, email configuration, system \r\naccess, and password resets.  \r\nò Performed routine system checks, updates, and preventive maintenance to \r\nreduce downtime.   \r\nò Collaborated with cross-functional teams to support smooth daily operations.",
+    "order": 2
+  }
+},
+{
+  "model": "myportifolio.experience",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-06-03T18:18:51.172Z",
+    "updated_at": "2026-06-03T18:20:12.620Z",
+    "role": "TALLY CLERK",
+    "company": "SGS Kenya Ltd",
+    "period": "July 2025 - May 2026",
+    "location": "Mombasa, Kenya",
+    "description": "ò Inspected, counted, and verified incoming and outgoing containers and bulk \r\ncargo against shipping manifests and delivery orders as instructed by our \r\nclient. \r\nò Recorded container numbers, seal numbers, cargo type, size, shipping line \r\ndetails, and damage status accurately in Terminal Operating Systems (TOS) \r\nand tally sheets. \r\nò Conducted detailed visual inspections of containers and cargo to identify \r\nstructural damage, leaks, and broken seals, documenting findings with \r\nphotographic evidence where necessary. \r\nò Monitored loading and offloading activities of trucks, trains, and vessels to \r\nensure accurate cargo dispatch and operational efficiency. \r\nò Identified and reported discrepancies in cargo weight, quantity, and \r\ndocumentation to minimize operational errors and losses. \r\nò Coordinated effectively with Reach Stacker/ECH operators, gate clerks, \r\ncustoms officials, and warehouse teams to maintain smooth yard and \r\nterminal operations. \r\nò Maintained high standards of accuracy, attention to detail, and compliance \r\nwith logistics and cargo handling procedures in fast-paced environments. \r\nò Collaborated with cross-functional teams to support smooth daily operations.",
+    "order": 4
+  }
+},
+{
+  "model": "myportifolio.experience",
+  "pk": 6,
+  "fields": {
+    "created_at": "2026-06-03T18:19:51.007Z",
+    "updated_at": "2026-06-03T18:19:51.007Z",
+    "role": "DATA ENTRY SPECIALIST",
+    "company": "SGS Kenya Ltd",
+    "period": "July 2025 - May 2026",
+    "location": "Mombasa, Kenya",
+    "description": "ò Entered, updated, and maintained large volumes of operational and client \r\ndata with high accuracy and attention to detail. \r\nò Verified and reviewed documents, reports, and records to ensure data \r\ncompleteness, consistency, and compliance with company standards. \r\nò Managed data entry processes for inspection, logistics and certification \r\nrecords within strict timelines. \r\nò Generated and maintained digital and physical filing systems to support \r\nefficient document retrieval and record management. \r\nò Prepared reports, spreadsheets, and summaries using Microsoft Excel, \r\nWord, and database management systems. \r\nò Maintained confidentiality and integrity of sensitive company and client \r\ninformation during data processing activities. \r\nò Assisted in administrative and operational support tasks to improve workflow \r\nefficiency and service delivery. \r\nò Demonstrated strong typing speed, organizational skills, and ability to work \r\neffectively in fast-paced environments with minimal supervision.",
+    "order": 3
+  }
+},
+{
+  "model": "myportifolio.resume",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-06-02T19:33:24.077Z",
+    "updated_at": "2026-06-02T19:33:24.077Z",
+    "summary": "Developer experienced in building responsive Django websites with dynamic portfolio, blog, services, resume, and contact-management features.",
+    "download_url": ""
+  }
+},
+{
+  "model": "myportifolio.service",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-06-02T19:33:24.078Z",
+    "updated_at": "2026-06-02T19:33:24.078Z",
+    "title": "Django Web Development",
+    "icon": "bi bi-code-slash",
+    "description": "Custom websites and web apps with clean models, admin management, and maintainable views.",
+    "is_active": true,
+    "order": 1
+  }
+},
+{
+  "model": "myportifolio.service",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-06-02T19:33:24.080Z",
+    "updated_at": "2026-06-02T19:33:24.080Z",
+    "title": "Responsive UI Design",
+    "icon": "bi bi-phone",
+    "description": "Mobile-friendly Bootstrap layouts that work smoothly across phones, tablets, and desktops.",
+    "is_active": true,
+    "order": 2
+  }
+},
+{
+  "model": "myportifolio.service",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-06-02T19:33:24.081Z",
+    "updated_at": "2026-06-02T19:33:24.081Z",
+    "title": "Portfolio Setup",
+    "icon": "bi bi-kanban",
+    "description": "Dynamic project galleries, resume pages, blogs, and contact workflows for personal brands.",
+    "is_active": true,
+    "order": 3
+  }
+},
+{
+  "model": "myportifolio.project",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-06-02T19:33:24.084Z",
+    "updated_at": "2026-06-02T19:33:24.084Z",
+    "title": "Dynamic Portfolio Website",
+    "slug": "dynamic-portfolio-website",
+    "category": "web",
+    "short_description": "A Django-powered portfolio with admin-managed projects, services, resume, and blog posts.",
+    "description": "Built with Django models, Bootstrap, responsive sections, detail pages, and a database-backed contact form.",
+    "image": "assets/img/portfolio/app-1.jpg",
+    "project_url": "",
+    "source_url": "",
+    "is_featured": true,
+    "order": 1
+  }
+},
+{
+  "model": "myportifolio.project",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-06-02T19:33:24.085Z",
+    "updated_at": "2026-06-02T19:33:24.085Z",
+    "title": "Business Landing System",
+    "slug": "business-landing-system",
+    "category": "product",
+    "short_description": "A content-managed business website for services, leads, and project showcases.",
+    "description": "Designed for easy updates from Django admin and a polished responsive customer experience.",
+    "image": "assets/img/portfolio/product-1.jpg",
+    "project_url": "",
+    "source_url": "",
+    "is_featured": true,
+    "order": 2
+  }
+},
+{
+  "model": "myportifolio.project",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-06-02T19:33:24.086Z",
+    "updated_at": "2026-06-02T19:33:24.086Z",
+    "title": "Brand Portfolio Gallery",
+    "slug": "brand-portfolio-gallery",
+    "category": "branding",
+    "short_description": "A filterable gallery for visual work, case studies, and brand assets.",
+    "description": "Uses category filters, project detail links, and responsive image cards.",
+    "image": "assets/img/portfolio/branding-1.jpg",
+    "project_url": "",
+    "source_url": "",
+    "is_featured": false,
+    "order": 3
+  }
+},
+{
+  "model": "myportifolio.project",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-06-04T13:37:20.580Z",
+    "updated_at": "2026-06-04T13:37:20.580Z",
+    "title": "Billing System",
+    "slug": "billing-system",
+    "category": "app",
+    "short_description": "A Django-powered billing system with payments gateways.",
+    "description": "",
+    "image": "assets/img/portfolio/app-2.jpg",
+    "project_url": "",
+    "source_url": "",
+    "is_featured": true,
+    "order": 0
+  }
+},
+{
+  "model": "myportifolio.project",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-06-04T13:43:11.684Z",
+    "updated_at": "2026-06-04T13:43:11.684Z",
+    "title": "AI Powered Breathing Exercise",
+    "slug": "ai-powered-breathing-exercise",
+    "category": "app",
+    "short_description": "A breathing excercise that is controlled by AI agent. The AI facilitates all the exercises while following closely for a smooth training on breathing enhancement.",
+    "description": "",
+    "image": "assets/img/portfolio/app-3.jpg",
+    "project_url": "",
+    "source_url": "",
+    "is_featured": true,
+    "order": 4
+  }
+},
+{
+  "model": "myportifolio.project",
+  "pk": 6,
+  "fields": {
+    "created_at": "2026-06-04T13:46:25.408Z",
+    "updated_at": "2026-06-04T13:46:25.408Z",
+    "title": "Watch Brand Portifolio Gallery",
+    "slug": "watch-brand-portifolio-gallery",
+    "category": "branding",
+    "short_description": "A filterable gallery for visual work, case studies, and brand assets.",
+    "description": "",
+    "image": "assets/img/portfolio/branding 1.jpeg",
+    "project_url": "",
+    "source_url": "",
+    "is_featured": true,
+    "order": 1
+  }
+},
+{
+  "model": "myportifolio.project",
+  "pk": 7,
+  "fields": {
+    "created_at": "2026-06-04T13:50:42.744Z",
+    "updated_at": "2026-06-04T13:56:04.775Z",
+    "title": "Django Portifolio Web App",
+    "slug": "django-portifolio-web-app",
+    "category": "web",
+    "short_description": "Short Description about Bakari Tungwa.",
+    "description": "",
+    "image": "assets/img/portfolio/web 22.jpg",
+    "project_url": "",
+    "source_url": "",
+    "is_featured": true,
+    "order": 1
+  }
+},
+{
+  "model": "myportifolio.blogpost",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-06-02T19:33:24.089Z",
+    "updated_at": "2026-06-02T19:33:24.089Z",
+    "title": "Building a Dynamic Django Portfolio",
+    "slug": "building-a-dynamic-django-portfolio",
+    "excerpt": "How a database-backed portfolio keeps your content fresh without editing templates.",
+    "content": "A dynamic portfolio lets you update projects, services, resume entries, and blog posts directly from Django admin. That keeps the website maintainable while preserving a polished public experience.",
+    "image": "assets/img/services.jpg",
+    "published": true,
+    "published_at": "2026-06-02T19:33:24.087Z"
+  }
+}
+]

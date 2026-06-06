@@ -87,7 +87,13 @@ def project_detail(request, slug):
 
 
 def blog_detail(request, slug):
-    post = get_object_or_404(BlogPost, slug=slug, published=True)
+    post = get_object_or_404(
+        BlogPost,
+        slug=slug,
+        published=True,
+    )
+    if post.published_at and post.published_at > timezone.now():
+        raise get_object_or_404(BlogPost, slug=None)
     return render(
         request,
         "blog_detail.html",
