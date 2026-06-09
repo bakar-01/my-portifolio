@@ -21,7 +21,7 @@ def _site_profile():
         return profile
 
     return SiteProfile(
-        name="Bakari Tungwa",
+        name="Bakari Tungwa Bakari",
         title="Full Stack Developer",
         tagline="I build responsive web experiences and database-backed products.",
         bio=(

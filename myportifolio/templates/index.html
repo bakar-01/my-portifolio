@@ -15,94 +15,141 @@
   <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
   <style>
     .portfolio-content img, .blog-card img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
-    .blog-card { height: 100%; border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%); border-radius: 8px; overflow: hidden; background: var(--surface-color); }
+    .blog-card { height: 100%; border: 1px solid rgba(var(--default-color-rgb), 0.12); border-radius: 12px; overflow: hidden; background: var(--surface-color); transition: all 0.3s ease; }
+    .blog-card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
     .blog-card .content { padding: 22px; }
     .status-message { border-radius: 8px; margin-bottom: 18px; padding: 12px 14px; }
     .status-message.success { background: #e8f7ef; color: #146c43; }
     .status-message.error { background: #fdecec; color: #a61e2b; }
     .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
-    .cta-row .btn { border-radius: 6px; padding: 10px 18px; }
-    .header .social-links a.whatsapp:hover { color: #25d366; }
-    .about-profile-image { width: 100%; height: 100%; min-height: 420px; object-fit: cover; border-radius: 8px; }
-    .blog-meta { color: color-mix(in srgb, var(--default-color), transparent 35%); font-size: 0.9rem; margin-bottom: 10px; }
+    .cta-row .btn { border-radius: 8px; padding: 12px 24px; font-weight: 500; transition: all 0.3s ease; }
+    .about-profile-image { width: 100%; height: 100%; min-height: 420px; object-fit: cover; border-radius: 12px; }
+    .blog-meta { color: rgba(var(--default-color-rgb), 0.65); font-size: 0.9rem; margin-bottom: 10px; }
     @media (max-width: 991px) {
       .about-profile-image { aspect-ratio: 4 / 5; height: auto; min-height: 0; }
     }
   </style>
 </head>
 <body class="index-page">
-  <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+  <header id="header" class="navbar-modern sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-lg">
+        <a class="navbar-brand fw-bold" href="{% url 'index' %}">
+          <span class="brand-accent">{{ profile.name }}</span>
+        </a>
 
-    <div class="profile-img">
-      <img src="{% static profile.profile_image %}" alt="{{ profile.name }}" class="img-fluid rounded-circle">
-    </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <a href="{% url 'index' %}" class="logo d-flex align-items-center justify-content-center">
-      <h1 class="sitename">{{ profile.name }}</h1>
-    </a>
-
-    <div class="social-links text-center">
-      {% if profile.linkedin %}<a href="{{ profile.linkedin }}" class="linkedin" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>{% endif %}
-      {% if profile.instagram %}<a href="{{ profile.instagram }}" class="instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>{% endif %}
-      {% if profile.facebook %}<a href="{{ profile.facebook }}" class="facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>{% endif %}
-      {% if profile.whatsapp %}<a href="{{ profile.whatsapp }}" class="whatsapp" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>{% endif %}
-    </div>
-
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="#projects"><i class="bi bi-kanban navicon"></i> Projects</a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-        <li><a href="#blog"><i class="bi bi-journal-text navicon"></i> Blog</a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-      </ul>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+            <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-lg-3" href="#contact">Get In Touch</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
 
   <main class="main">
-    <section id="hero" class="hero section dark-background">
-      <img src="{% static profile.hero_image %}" alt="{{ profile.name }}" data-aos="fade-in">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2>{{ profile.name }}</h2>
-        <p>I'm <span class="typed" data-typed-items="{{ profile.typed_roles }}">{{ profile.title }}</span></p>
-        <div class="cta-row">
-          <a href="#projects" class="btn btn-primary"><i class="bi bi-kanban me-2"></i>View Projects</a>
-          <a href="#contact" class="btn btn-outline-light"><i class="bi bi-send me-2"></i>Contact Me</a>
+    <section id="hero" class="hero-modern">
+      <div class="hero-gradient"></div>
+      <div class="container-lg py-5" style="padding-top: 120px; padding-bottom: 100px;">
+        <div class="row align-items-center min-vh-100">
+          <div class="col-lg-7" data-aos="fade-up">
+            <div class="hero-content">
+              <p class="hero-subtitle">Welcome to my portfolio</p>
+              <h1 class="hero-title">{{ profile.name }}</h1>
+              <p class="hero-tagline">I'm <span class="typed" data-typed-items="{{ profile.typed_roles }}">{{ profile.title }}</span></p>
+              <p class="hero-description mt-4">{{ profile.tagline|default:profile.bio }}</p>
+              <div class="cta-row mt-5">
+                <a href="#projects" class="btn btn-primary btn-lg"><i class="bi bi-arrow-right me-2"></i>View My Work</a>
+                <a href="#contact" class="btn btn-outline-primary btn-lg"><i class="bi bi-send me-2"></i>Let's Talk</a>
+              </div>
+              <div class="hero-social mt-5">
+                {% if profile.linkedin %}<a href="{{ profile.linkedin }}" class="social-icon" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>{% endif %}
+                {% if profile.instagram %}<a href="{{ profile.instagram }}" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>{% endif %}
+                {% if profile.facebook %}<a href="{{ profile.facebook }}" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>{% endif %}
+                {% if profile.whatsapp %}<a href="{{ profile.whatsapp }}" class="social-icon" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>{% endif %}
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 d-none d-lg-flex align-items-center justify-content-center" data-aos="fade-left" data-aos-delay="200">
+            <div class="hero-image-wrapper">
+              <img src="{% static profile.profile_image %}" alt="{{ profile.name }}" class="hero-image">
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="scroll-indicator" style="text-align: center; padding-bottom: 40px;">
+        <a href="#about" class="scroll-down"><i class="bi bi-chevron-down"></i></a>
       </div>
     </section>
 
-    <section id="about" class="about section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <p>{{ profile.tagline|default:profile.bio }}</p>
-      </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 justify-content-center align-items-stretch">
-          <div class="col-lg-4">
-            <img src="{% static profile.profile_image %}" class="about-profile-image" alt="{{ profile.name }}">
+    <section id="about" class="about-modern py-5">
+      <div class="container-lg">
+        <div class="section-title mb-5" data-aos="fade-up">
+          <h2>About Me</h2>
+          <div class="title-underline"></div>
+        </div>
+        <div class="row gy-5 align-items-center">
+          <div class="col-lg-5" data-aos="fade-right">
+            <div class="about-image-wrapper">
+              <img src="{% static profile.profile_image %}" class="about-image" alt="{{ profile.name }}">
+            </div>
           </div>
-          <div class="col-lg-8 content">
-            <h2>{{ profile.title }}</h2>
-            <p class="fst-italic py-3">{{ profile.bio }}</p>
+          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="100">
+            <h3 class="mb-3">{{ profile.title }}</h3>
+            <p class="lead mb-4">{{ profile.bio }}</p>
+
+            <div class="row g-3 mb-4">
+              <div class="col-sm-6">
+                <div class="stat-box">
+                  <div class="stat-number">4+</div>
+                  <div class="stat-label">Years Experience</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="stat-box">
+                  <div class="stat-number">10+</div>
+                  <div class="stat-label">Projects Completed</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="stat-box">
+                  <div class="stat-number">8+</div>
+                  <div class="stat-label">Happy Clients</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="stat-box">
+                  <div class="stat-number">100%</div>
+                  <div class="stat-label">Satisfaction Rate</div>
+                </div>
+              </div>
+            </div>
+
             <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  {% if profile.birthday %}<li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>{{ profile.birthday }}</span></li>{% endif %}
-                  {% if profile.website %}<li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>{{ profile.website }}</span></li>{% endif %}
-                  {% if profile.phone %}<li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>{{ profile.phone }}</span></li>{% endif %}
-                  {% if profile.city %}<li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>{{ profile.city }}</span></li>{% endif %}
+              <div class="col-md-6">
+                <ul class="about-list">
+                  {% if profile.birthday %}<li><i class="bi bi-check-circle"></i> <strong>Birthday:</strong> {{ profile.birthday }}</li>{% endif %}
+                  {% if profile.website %}<li><i class="bi bi-check-circle"></i> <strong>Website:</strong> {{ profile.website }}</li>{% endif %}
+                  {% if profile.phone %}<li><i class="bi bi-check-circle"></i> <strong>Phone:</strong> {{ profile.phone }}</li>{% endif %}
+                  {% if profile.city %}<li><i class="bi bi-check-circle"></i> <strong>City:</strong> {{ profile.city }}</li>{% endif %}
                 </ul>
               </div>
-              <div class="col-lg-6">
-                <ul>
-                  {% if profile.degree %}<li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>{{ profile.degree }}</span></li>{% endif %}
-                  {% if profile.email %}<li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>{{ profile.email }}</span></li>{% endif %}
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>{{ profile.freelance_status }}</span></li>
+              <div class="col-md-6">
+                <ul class="about-list">
+                  {% if profile.degree %}<li><i class="bi bi-check-circle"></i> <strong>Degree:</strong> {{ profile.degree }}</li>{% endif %}
+                  {% if profile.email %}<li><i class="bi bi-check-circle"></i> <strong>Email:</strong> {{ profile.email }}</li>{% endif %}
+                  <li><i class="bi bi-check-circle"></i> <strong>Freelance:</strong> {{ profile.freelance_status }}</li>
                 </ul>
               </div>
             </div>
@@ -111,19 +158,23 @@
       </div>
     </section>
 
-    <section id="skills" class="skills section light-background">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <p>Tools, languages, and practices I use to deliver polished digital products.</p>
-      </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row skills-content skills-animation">
+    <section id="skills" class="skills-modern py-5 light-background">
+      <div class="container-lg">
+        <div class="section-title mb-5" data-aos="fade-up">
+          <h2>Skills & Expertise</h2>
+          <p>Tools, languages, and practices I use to deliver polished digital products.</p>
+          <div class="title-underline"></div>
+        </div>
+        <div class="row g-4" data-aos="fade-up" data-aos-delay="100">
           {% for skill in skills %}
             <div class="col-lg-6">
-              <div class="progress">
-                <span class="skill"><span>{{ skill.name }}</span> <i class="val">{{ skill.proficiency }}%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="{{ skill.proficiency }}" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="skill-card">
+                <div class="skill-header">
+                  <span class="skill-name">{{ skill.name }}</span>
+                  <span class="skill-percent">{{ skill.proficiency }}%</span>
+                </div>
+                <div class="progress-bar-modern">
+                  <div class="progress-fill" style="width: {{ skill.proficiency }}%"></div>
                 </div>
               </div>
             </div>
@@ -134,62 +185,73 @@
       </div>
     </section>
 
-    <section id="resume" class="resume section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Resume</h2>
-        <p>{{ resume.summary|default:"Manage your resume summary, education, and experience from the Django admin." }}</p>
-        <div class="cta-row">
-          <a href="{% url 'resume' %}" class="btn btn-primary"><i class="bi bi-file-earmark-person me-2"></i>Open Resume Page</a>
-          {% if resume.download_url %}<a href="{{ resume.download_url }}" class="btn btn-outline-primary"><i class="bi bi-download me-2"></i>Download Resume</a>{% endif %}
+    <section id="resume" class="resume-modern py-5">
+      <div class="container-lg">
+        <div class="section-title mb-5" data-aos="fade-up">
+          <h2>Resume</h2>
+          <p>{{ resume.summary|default:"Manage your resume summary, education, and experience from the Django admin." }}</p>
+          <div class="title-underline"></div>
+          <div class="cta-row mt-4">
+            <a href="{% url 'resume' %}" class="btn btn-primary"><i class="bi bi-file-earmark-person me-2"></i>View Full Resume</a>
+            {% if resume.download_url %}<a href="{{ resume.download_url }}" class="btn btn-outline-primary"><i class="bi bi-download me-2"></i>Download PDF</a>{% endif %}
+          </div>
         </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Education</h3>
-            {% for item in education|slice:":1" %}
-              <div class="resume-item">
-                <h4>{{ item.degree }}</h4>
-                <h5>{{ item.period }}</h5>
-                <p><em>{{ item.school }}</em></p>
-                <p>{{ item.description }}</p>
-                <a href="{% url 'resume' %}" class="readmore"><span>View full education history</span><i class="bi bi-arrow-right"></i></a>
+        <div class="row g-4">
+          <div class="col-lg-6" data-aos="fade-up">
+            <h4 class="resume-section-title">Education</h4>
+            {% for item in education|slice:":2" %}
+              <div class="resume-card">
+                <div class="resume-marker"></div>
+                <div class="resume-content">
+                  <h5>{{ item.degree }}</h5>
+                  <p class="resume-period"><i class="bi bi-calendar-event me-1"></i>{{ item.period }}</p>
+                  <p class="resume-school"><em>{{ item.school }}</em></p>
+                  <p class="resume-description">{{ item.description }}</p>
+                </div>
               </div>
             {% empty %}
               <p>Add education records from the Django admin.</p>
             {% endfor %}
+            <a href="{% url 'resume' %}" class="readmore text-decoration-none mt-2"><span>View more</span><i class="bi bi-arrow-right ms-1"></i></a>
           </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Experience</h3>
-            {% for item in experience|slice:":1" %}
-              <div class="resume-item">
-                <h4>{{ item.role }}</h4>
-                <h5>{{ item.period }}</h5>
-                <p><em>{{ item.company }}{% if item.location %}, {{ item.location }}{% endif %}</em></p>
-                <p>{{ item.description|linebreaksbr }}</p>
-                <a href="{% url 'resume' %}" class="readmore"><span>View full experience history</span><i class="bi bi-arrow-right"></i></a>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h4 class="resume-section-title">Experience</h4>
+            {% for item in experience|slice:":2" %}
+              <div class="resume-card">
+                <div class="resume-marker"></div>
+                <div class="resume-content">
+                  <h5>{{ item.role }}</h5>
+                  <p class="resume-period"><i class="bi bi-calendar-event me-1"></i>{{ item.period }}</p>
+                  <p class="resume-company"><em>{{ item.company }}{% if item.location %}, {{ item.location }}{% endif %}</em></p>
+                  <p class="resume-description">{{ item.description|linebreaksbr }}</p>
+                </div>
               </div>
             {% empty %}
               <p>Add experience records from the Django admin.</p>
             {% endfor %}
+            <a href="{% url 'resume' %}" class="readmore text-decoration-none mt-2"><span>View more</span><i class="bi bi-arrow-right ms-1"></i></a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="services section light-background">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Projects</h2>
-        <p>Featured builds with practical outcomes, clean interfaces, and database-backed workflows.</p>
-      </div>
-      <div class="container">
-        <div class="row gy-4">
+    <section id="projects" class="projects-modern py-5 light-background">
+      <div class="container-lg">
+        <div class="section-title mb-5" data-aos="fade-up">
+          <h2>Featured Projects</h2>
+          <p>Selection of recent work and notable builds with practical outcomes and clean interfaces.</p>
+          <div class="title-underline"></div>
+        </div>
+        <div class="row g-4">
           {% for project in projects %}
-            <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up">
-              <div class="icon flex-shrink-0"><i class="bi bi-window"></i></div>
-              <div>
-                <h4 class="title"><a href="{{ project.get_absolute_url }}" class="stretched-link">{{ project.title }}</a></h4>
-                <p class="description">{{ project.short_description }}</p>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up">
+              <div class="project-card h-100">
+                <div class="project-icon">
+                  <i class="bi bi-{{ project.icon|default:'window' }}"></i>
+                </div>
+                <h4><a href="{{ project.get_absolute_url }}" class="stretched-link">{{ project.title }}</a></h4>
+                <p class="project-description">{{ project.short_description }}</p>
+                <a href="{{ project.get_absolute_url }}" class="arrow-link">Learn more <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           {% empty %}
@@ -199,14 +261,15 @@
       </div>
     </section>
 
-    <section id="portfolio" class="portfolio section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>A visual gallery of selected work, filterable by project category.</p>
-      </div>
-      <div class="container">
+    <section id="portfolio" class="portfolio-modern py-5">
+      <div class="container-lg">
+        <div class="section-title mb-5" data-aos="fade-up">
+          <h2>Portfolio Gallery</h2>
+          <p>Visual collection of selected work, filterable by project category.</p>
+          <div class="title-underline"></div>
+        </div>
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+          <ul class="portfolio-filters isotope-filters text-center mb-5" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">All</li>
             <li data-filter=".filter-app">App</li>
             <li data-filter=".filter-web">Web</li>
@@ -214,16 +277,20 @@
             <li data-filter=".filter-product">Product</li>
             <li data-filter=".filter-other">Other</li>
           </ul>
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+          <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
             {% for project in projects %}
               <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-{{ project.category }}">
-                <div class="portfolio-content h-100">
-                  <img src="{% static project.image %}" class="img-fluid" alt="{{ project.title }}">
-                  <div class="portfolio-info">
+                <div class="portfolio-card">
+                  <div class="portfolio-image">
+                    <img src="{% static project.image %}" class="img-fluid" alt="{{ project.title }}">
+                  </div>
+                  <div class="portfolio-overlay">
                     <h4>{{ project.title }}</h4>
                     <p>{{ project.short_description }}</p>
-                    <a href="{% static project.image %}" title="{{ project.title }}" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                    <a href="{{ project.get_absolute_url }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                    <div class="portfolio-links">
+                      <a href="{% static project.image %}" title="{{ project.title }}" data-gallery="portfolio-gallery" class="glightbox"><i class="bi bi-zoom-in"></i></a>
+                      <a href="{{ project.get_absolute_url }}" title="More Details"><i class="bi bi-link-45deg"></i></a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -235,19 +302,23 @@
       </div>
     </section>
 
-    <section id="services" class="services section light-background">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>Services can be added, reordered, hidden, or edited directly from the admin dashboard.</p>
-      </div>
-      <div class="container">
-        <div class="row gy-4">
+    <section id="services" class="services-modern py-5 light-background">
+      <div class="container-lg">
+        <div class="section-title mb-5" data-aos="fade-up">
+          <h2>Services & Expertise</h2>
+          <p>What I offer to help bring your projects to life.</p>
+          <div class="title-underline"></div>
+        </div>
+        <div class="row g-4">
           {% for service in services %}
-            <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up">
-              <div class="icon flex-shrink-0"><i class="{{ service.icon }}"></i></div>
-              <div>
-                <h4 class="title">{{ service.title }}</h4>
-                <p class="description">{{ service.description }}</p>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up">
+              <div class="service-card h-100">
+                <div class="service-icon">
+                  <i class="{{ service.icon }}"></i>
+                </div>
+                <h4 class="service-title">{{ service.title }}</h4>
+                <p class="service-description">{{ service.description }}</p>
+                <a href="#contact" class="service-link"><span>Learn more</span> <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
           {% empty %}
@@ -257,22 +328,28 @@
       </div>
     </section>
 
-    <section id="blog" class="section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Blog</h2>
-        <p>Recent posts, updates, and short notes from the database-backed blog section.</p>
-      </div>
-      <div class="container">
-        <div class="row gy-4">
+    <section id="blog" class="blog-modern py-5">
+      <div class="container-lg">
+        <div class="section-title mb-5" data-aos="fade-up">
+          <h2>Latest Blog Posts</h2>
+          <p>Recent articles, insights, and updates from my blog.</p>
+          <div class="title-underline"></div>
+        </div>
+        <div class="row g-4">
           {% for post in blog_posts %}
             <div class="col-lg-4 col-md-6" data-aos="fade-up">
               <article class="blog-card">
-                <img src="{% static post.image %}" alt="{{ post.title }}">
+                <div class="blog-image">
+                  <img src="{% static post.image %}" alt="{{ post.title }}">
+                </div>
                 <div class="content">
-                  <div class="blog-meta"><i class="bi bi-clock me-1"></i>{{ post.created_at|date:"M d, Y" }} at {{ post.created_at|time:"g:i A" }}</div>
-                  <h4><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
-                  <p>{{ post.excerpt }}</p>
-                  <a href="{{ post.get_absolute_url }}" class="readmore"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                  <div class="blog-meta">
+                    <span class="blog-date"><i class="bi bi-calendar3 me-1"></i>{{ post.created_at|date:"M d, Y" }}</span>
+                    <span class="blog-time"><i class="bi bi-clock me-1"></i>{{ post.created_at|time:"g:i A" }}</span>
+                  </div>
+                  <h4 class="blog-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
+                  <p class="blog-excerpt">{{ post.excerpt }}</p>
+                  <a href="{{ post.get_absolute_url }}" class="readmore"><span>Continue reading</span><i class="bi bi-arrow-right ms-1"></i></a>
                 </div>
               </article>
             </div>
@@ -283,55 +360,74 @@
       </div>
     </section>
 
-    <section id="contact" class="contact section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Send a message and it will be saved in the Contact messages table in Django admin.</p>
-      </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
-          <div class="col-lg-5">
-            <div class="info-wrap">
+    <section id="contact" class="contact-modern py-5">
+      <div class="container-lg">
+        <div class="section-title mb-5" data-aos="fade-up">
+          <h2>Let's Get In Touch</h2>
+          <p>Have a project in mind? Let's connect and create something amazing together.</p>
+          <div class="title-underline"></div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-5" data-aos="fade-right">
+            <div class="contact-info-group">
               {% if profile.address %}
-                <div class="info-item d-flex"><i class="bi bi-geo-alt flex-shrink-0"></i><div><h3>Address</h3><p>{{ profile.address }}</p></div></div>
+                <div class="contact-card">
+                  <div class="contact-icon"><i class="bi bi-geo-alt"></i></div>
+                  <div>
+                    <h5>Location</h5>
+                    <p>{{ profile.address }}</p>
+                  </div>
+                </div>
               {% endif %}
               {% if profile.phone %}
-                <div class="info-item d-flex"><i class="bi bi-telephone flex-shrink-0"></i><div><h3>Call</h3><p>{{ profile.phone }}</p></div></div>
+                <div class="contact-card">
+                  <div class="contact-icon"><i class="bi bi-telephone"></i></div>
+                  <div>
+                    <h5>Phone</h5>
+                    <p><a href="tel:{{ profile.phone }}">{{ profile.phone }}</a></p>
+                  </div>
+                </div>
               {% endif %}
               {% if profile.email %}
-                <div class="info-item d-flex"><i class="bi bi-envelope flex-shrink-0"></i><div><h3>Email</h3><p>{{ profile.email }}</p></div></div>
+                <div class="contact-card">
+                  <div class="contact-icon"><i class="bi bi-envelope"></i></div>
+                  <div>
+                    <h5>Email</h5>
+                    <p><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></p>
+                  </div>
+                </div>
               {% endif %}
             </div>
           </div>
-          <div class="col-lg-7">
+          <div class="col-lg-7" data-aos="fade-left">
             {% for message in messages %}
               <div class="status-message {{ message.tags }}">{{ message }}</div>
             {% endfor %}
-            <form action="{% url 'index' %}#contact" method="post" data-aos="fade-up" data-aos-delay="200">
+            <form action="{% url 'index' %}#contact" method="post" class="contact-form">
               {% csrf_token %}
-              <div class="row gy-4">
+              <div class="row g-3">
                 <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
+                  <label for="name-field" class="form-label">Your Name</label>
                   {{ contact_form.name }}
-                  {{ contact_form.name.errors }}
+                  {% if contact_form.name.errors %}<div class="text-danger small mt-1">{{ contact_form.name.errors }}</div>{% endif %}
                 </div>
                 <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
+                  <label for="email-field" class="form-label">Your Email</label>
                   {{ contact_form.email }}
-                  {{ contact_form.email.errors }}
+                  {% if contact_form.email.errors %}<div class="text-danger small mt-1">{{ contact_form.email.errors }}</div>{% endif %}
                 </div>
-                <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
+                <div class="col-12">
+                  <label for="subject-field" class="form-label">Subject</label>
                   {{ contact_form.subject }}
-                  {{ contact_form.subject.errors }}
+                  {% if contact_form.subject.errors %}<div class="text-danger small mt-1">{{ contact_form.subject.errors }}</div>{% endif %}
                 </div>
-                <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
+                <div class="col-12">
+                  <label for="message-field" class="form-label">Message</label>
                   {{ contact_form.message }}
-                  {{ contact_form.message.errors }}
+                  {% if contact_form.message.errors %}<div class="text-danger small mt-1">{{ contact_form.message.errors }}</div>{% endif %}
                 </div>
-                <div class="col-md-12 text-center">
-                  <button type="submit">Send Message</button>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary btn-lg w-100"><i class="bi bi-send me-2"></i>Send Message</button>
                 </div>
               </div>
             </form>
@@ -341,16 +437,34 @@
     </section>
   </main>
 
-  <footer id="footer" class="footer position-relative light-background">
-    <div class="container">
-      <div class="copyright text-center">
-        <p>&copy; <span>{% now "Y" %}</span> <strong class="px-1 sitename">{{ profile.name }}</strong></p>
+  <footer id="footer" class="footer-modern py-5">
+    <div class="container-lg">
+      <div class="footer-content mb-4">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h5 class="footer-brand">{{ profile.name }}</h5>
+            <p class="text-muted mb-0">Building digital experiences that matter.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="footer-social">
+              {% if profile.linkedin %}<a href="{{ profile.linkedin }}" title="LinkedIn"><i class="bi bi-linkedin"></i></a>{% endif %}
+              {% if profile.instagram %}<a href="{{ profile.instagram }}" title="Instagram"><i class="bi bi-instagram"></i></a>{% endif %}
+              {% if profile.facebook %}<a href="{{ profile.facebook }}" title="Facebook"><i class="bi bi-facebook"></i></a>{% endif %}
+              {% if profile.whatsapp %}<a href="{{ profile.whatsapp }}" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>{% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="footer-bottom text-center">
+        <p class="text-muted mb-0">&copy; <span>{% now "Y" %}</span> <strong>{{ profile.name }}</strong>. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <div id="preloader"></div>
+
   <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
   <script src="{% static 'assets/vendor/typed.js/typed.umd.js' %}"></script>
