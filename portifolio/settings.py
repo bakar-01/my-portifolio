@@ -26,7 +26,11 @@ SECRET_KEY = 'django-insecure-k%-dx%ei*&d+vr5jhd(1@v7!cr+=9ch7&a6dtja@si5w&@1s4@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ritzy-mandolin-strongbox.ngrok-free.dev', '127.0.0.1',]
+ALLOWED_HOSTS = [
+    "ritzy-mandolin-strongbox.ngrok-free.dev",
+    "127.0.0.1",
+    "localhost",
+]
 
 
 # Application definition
@@ -119,6 +123,10 @@ USE_I18N = True
 
 USE_TZ = True
 
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://ritzy-mandolin-strongbox.ngrok-free.dev",
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
