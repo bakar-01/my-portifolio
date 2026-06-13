@@ -27,6 +27,7 @@ SECRET_KEY = 'django-insecure-k%-dx%ei*&d+vr5jhd(1@v7!cr+=9ch7&a6dtja@si5w&@1s4@
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    "my-portifolio-98rm.onrender.com",
     "ritzy-mandolin-strongbox.ngrok-free.dev",
     "127.0.0.1",
     "localhost",
