@@ -83,20 +83,23 @@ WSGI_APPLICATION = 'portifolio.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    "default": dj_database_url.config(
-        default=os.environ.get("DATABASE_URL")
-    )
-    #'default': {
-     #   'ENGINE': 'django.db.backends.mysql',
-      #  #'OPTIONS': {
-        #    'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-       # },
-       # 'NAME': 'portifolio_db',
-        #'USER': 'root',
-        #'PASSWORD': '11223344',
-        #'HOST': '127.0.0.1',
-        #'PORT': '3306',
-    #}
+    #"default": dj_database_url.config(
+        #default=os.environ.get("DATABASE_URL")
+    #)
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+   # 'default': {
+    #    'ENGINE': 'django.db.backends.mysql',
+    #  'OPTIONS': {
+    #        'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+    #    },
+    #    'NAME': 'portifolio_db',
+    #    'USER': 'root',
+    #    'PASSWORD': '11223344',
+    #    'HOST': '127.0.0.1',
+     #   'PORT': '3306',
+    }
 }
 
 
