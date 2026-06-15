@@ -8,10 +8,13 @@
 # Font & Color Variables
 --------------------------------------------------------------*/
 :root {
-  --background-color: #f8fafc;
+  --background-color: rgb(255, 255, 255);
   --surface-color: #ffffff;
+  --default-color-rgb: 3, 3, 2;
+  --heading-color-rgb: 15, 23, 42;
+  --accent-color-rgb: 37, 99, 235;
 
-  --default-color: #475569;
+  --default-color: #030302;
   --heading-color: #0f172a;
 
   /* Professional accent */
@@ -35,7 +38,9 @@
 .dark-background {
   --background-color: #040b14;
   --default-color: #ffffff;
+  --default-color-rgb: 255, 255, 255;
   --heading-color: #ffffff;
+  --heading-color-rgb: 255, 255, 255;
   --surface-color: #151f2b;
   --contrast-color: #ffffff;
 }
@@ -110,7 +115,7 @@ h6 { font-size: 1rem; }
 }
 
 .navbar-nav .nav-link {
-  font-family: var(--nav-font);
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   color: var(--default-color) !important;
   margin: 0 0.5rem;
@@ -143,16 +148,7 @@ h6 { font-size: 1rem; }
 }
 
 .hero-gradient {
-  position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 600px;
-  height: 600px;
-  background: rgba(37, 99, 235, 0.05);
-  filter: blur(100px);
-  border-radius: 50%;
-  animation: float 8s ease-in-out infinite;
-  z-index: 1;
+  display: none;
 }
 
 @keyframes float {
