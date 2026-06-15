@@ -8,21 +8,23 @@
 # Font & Color Variables
 --------------------------------------------------------------*/
 :root {
-  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway", sans-serif;
-  --nav-font: "Poppins", sans-serif;
-  --background-color: #ffffff;
-  --default-color: #272829;
-  --heading-color: #050d18;
-  --accent-color: #149ddd;
+  --background-color: #f8fafc;
   --surface-color: #ffffff;
+
+  --default-color: #475569;
+  --heading-color: #0f172a;
+
+  /* Professional accent */
+  --accent-color: #2563eb;
+
   --contrast-color: #ffffff;
-  --gradient-primary: linear-gradient(135deg, #149ddd 0%, #0066cc 100%);
-  --gradient-light: linear-gradient(135deg, #f4fafd 0%, #e8f4f8 100%);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 6px 18px rgba(15, 23, 42, 0.12);
+  --shadow-lg: 0 10px 30px rgba(15, 23, 42, 0.15);
+
+  --transition: all 0.3s ease;
 }
 
 .light-background {
@@ -48,7 +50,7 @@ html {
 body {
   color: var(--default-color);
   background-color: var(--background-color);
-  font-family: var(--default-font);
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   line-height: 1.6;
 }
@@ -65,7 +67,7 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--heading-color);
-  font-family: var(--heading-font);
+  font-family:'Montserrat', sans-serif;
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.2;
@@ -101,7 +103,7 @@ h6 { font-size: 1rem; }
 }
 
 .brand-accent {
-  background: var(--gradient-primary);
+  color: var(--accent-color);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -146,7 +148,8 @@ h6 { font-size: 1rem; }
   right: -20%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(20, 157, 221, 0.1) 0%, transparent 70%);
+  background: rgba(37, 99, 235, 0.05);
+  filter: blur(100px);
   border-radius: 50%;
   animation: float 8s ease-in-out infinite;
   z-index: 1;
@@ -306,7 +309,7 @@ h6 { font-size: 1rem; }
 }
 
 .btn-primary {
-  background: var(--gradient-primary);
+  background: var(--accent-color);
   color: white;
   border-color: var(--accent-color);
   box-shadow: 0 4px 12px rgba(20, 157, 221, 0.3);
@@ -316,7 +319,7 @@ h6 { font-size: 1rem; }
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(20, 157, 221, 0.4);
   color: white;
-  background: var(--gradient-primary);
+  background: #1d4ed8;
 }
 
 .btn-outline-primary {
@@ -359,7 +362,7 @@ h6 { font-size: 1rem; }
 .title-underline {
   height: 4px;
   width: 80px;
-  background: var(--gradient-primary);
+  background: var(--accent-color);
   border-radius: 2px;
   margin-top: 1rem;
   animation: slideIn 0.6s ease-out;
@@ -519,7 +522,7 @@ h6 { font-size: 1rem; }
 
 .progress-fill {
   height: 100%;
-  background: var(--gradient-primary);
+  background: var(--accent-color);
   border-radius: 10px;
   animation: fillProgress 1.5s ease-out forwards;
 }
@@ -569,7 +572,7 @@ h6 { font-size: 1rem; }
   top: 2.5rem;
   width: 2px;
   height: calc(100% + 1rem);
-  background: linear-gradient(180deg, var(--accent-color) 0%, transparent 100%);
+  background: rgba(37,99,235,.3);
 }
 
 .resume-card:last-child::before {
@@ -744,7 +747,7 @@ h6 { font-size: 1rem; }
 .portfolio-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(20, 157, 221, 0.9) 0%, rgba(0, 102, 204, 0.9) 100%);
+  background: rgba(15, 23, 42, 0.9);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1114,7 +1117,7 @@ h6 { font-size: 1rem; }
   right: 20px;
   bottom: -20px;
   z-index: 99999;
-  background: var(--gradient-primary);
+  background: var(--accent-color);
   width: 48px;
   height: 48px;
   border-radius: 50%;
