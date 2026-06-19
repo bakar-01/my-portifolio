@@ -21,3 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('myportifolio.urls')),
 ]
+
+handler400 = "myportifolio.views.bad_request"
+handler403 = "myportifolio.views.permission_denied"
+handler404 = "myportifolio.views.page_not_found"
+handler500 = "myportifolio.views.server_error"

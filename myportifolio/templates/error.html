@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>{{ page_title }} - {{ profile.name }}</title>
+  <meta content="{{ message }}" name="description">
+  <link href="{% static 'assets/img/favicon.jpeg' %}" rel="icon">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+</head>
+<body class="error-page">
+  <header id="header" class="navbar-modern sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-lg">
+        <a class="navbar-brand fw-bold" href="{% url 'index' %}">
+          <span class="brand-accent">{{ profile.name }}</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="error-hero light-background">
+      <div class="container-lg">
+        <div class="error-panel">
+          <p class="error-kicker">Error {{ status_code }}</p>
+          <h1>{{ headline }}</h1>
+          <p class="error-message-text">{{ message }}</p>
+          <div class="error-actions">
+            <a href="{% url 'index' %}" class="btn btn-primary">
+              <i class="bi bi-house-door"></i>
+              Home
+            </a>
+            <a href="{% url 'index' %}#contact" class="btn btn-outline-primary">
+              <i class="bi bi-envelope"></i>
+              Contact
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
