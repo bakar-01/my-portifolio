@@ -15,6 +15,11 @@ from pathlib import Path
 import os
 # import dj_database_url
 
+
+def _split_env_list(value):
+    return [item.strip() for item in value.split(",") if item.strip()]
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -150,6 +155,41 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
+
+# Email notifications
+CONTACT_NOTIFICATION_RECIPIENTS = _split_env_list(
+    os.environ.get("CONTACT_NOTIFICATION_RECIPIENTS", os.environ.get("ADMIN_EMAIL", ""))
+)
+
+ADMINS = [
+    (os.environ.get("ADMIN_NAME", "Site Admin"), email)
+    for email in CONTACT_NOTIFICATION_RECIPIENTS
+]
+
+DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL", "webmaster@localhost")
+SERVER_EMAIL = os.environ.get("SERVER_EMAIL", DEFAULT_FROM_EMAIL)
+EMAIL_BACKEND = os.environ.get(
+    "EMAIL_BACKEND",
+    "django.core.mail.backends.console.EmailBackend"
+    if DEBUG
+    else "django.core.mail.backends.smtp.EmailBackend",
+)
+EMAIL_HOST = os.environ.get("EMAIL_HOST", "localhost")
+EMAIL_PORT = int(os.environ.get("EMAIL_PORT", "25"))
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "")
+EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS", "").lower() in (
+    "1",
+    "true",
+    "yes",
+    "on",
+)
+EMAIL_USE_SSL = os.environ.get("EMAIL_USE_SSL", "").lower() in (
+    "1",
+    "true",
+    "yes",
+    "on",
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

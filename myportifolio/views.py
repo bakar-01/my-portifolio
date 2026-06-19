@@ -1,9 +1,12 @@
 import logging
 
+from django.conf import settings
 from django.contrib import messages
+from django.core.mail import EmailMessage
 from django.db import DatabaseError
 from django.http import Http404
 from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse
 from django.utils import timezone
 
 from .forms import ContactMessageForm
@@ -46,12 +49,54 @@ def _site_profile():
     return _fallback_profile()
 
 
+def _contact_notification_recipients(profile):
+    recipients = list(getattr(settings, "CONTACT_NOTIFICATION_RECIPIENTS", []))
+    if getattr(profile, "pk", None) and profile.email:
+        recipients.append(profile.email)
+
+    return list(dict.fromkeys(recipients))
+
+
+def _notify_admin_of_contact_message(contact_message, request, profile):
+    recipients = _contact_notification_recipients(profile)
+    if not recipients:
+        logger.warning(
+            "Contact message %s received but no notification recipients are configured.",
+            contact_message.pk,
+        )
+        return
+
+    admin_url = request.build_absolute_uri(
+        reverse("admin:myportifolio_contactmessage_change", args=[contact_message.pk])
+    )
+    subject = " ".join(contact_message.subject.splitlines())
+    email = EmailMessage(
+        subject=f"New portfolio contact: {subject}",
+        body=(
+            "A visitor reached out through your portfolio contact form.\n\n"
+            f"Name: {contact_message.name}\n"
+            f"Email: {contact_message.email}\n"
+            f"Subject: {contact_message.subject}\n\n"
+            "Message:\n"
+            f"{contact_message.message}\n\n"
+            "View this message in Django admin:\n"
+            f"{admin_url}"
+        ),
+        from_email=settings.DEFAULT_FROM_EMAIL,
+        to=recipients,
+        reply_to=[contact_message.email],
+    )
+    email.send(fail_silently=False)
+
+
 def index(request):
+    profile = _site_profile()
+
     if request.method == "POST":
         form = ContactMessageForm(request.POST)
         if form.is_valid():
             try:
-                form.save()
+                contact_message = form.save()
             except DatabaseError:
                 logger.exception("Failed to save contact message.")
                 messages.error(
@@ -59,6 +104,13 @@ def index(request):
                     "Sorry, your message couldn't be sent right now. Please try again later.",
                 )
             else:
+                try:
+                    _notify_admin_of_contact_message(contact_message, request, profile)
+                except Exception:
+                    logger.exception(
+                        "Failed to send contact notification for message %s.",
+                        contact_message.pk,
+                    )
                 messages.success(request, "Your message has been sent. Thank you!")
                 return redirect("index")
         else:
@@ -71,7 +123,7 @@ def index(request):
     ) | BlogPost.objects.filter(published=True, published_at__isnull=True)
 
     context = {
-        "profile": _site_profile(),
+        "profile": profile,
         "skills": Skill.objects.all(),
         "education": Education.objects.all(),
         "experience": Experience.objects.all(),
