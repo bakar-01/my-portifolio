@@ -13,7 +13,13 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
-from dotenv import load_dotenv
+
+try:
+    from dotenv import load_dotenv
+except ModuleNotFoundError:
+    def load_dotenv(*_args, **_kwargs):
+        return False
+
 # import dj_database_url
 
 
@@ -32,8 +38,9 @@ load_dotenv(BASE_DIR / ".env")
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-k%-dx%ei*&d+vr5jhd(1@v7!cr+=9ch7&a6dtja@si5w&@1s4@'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", "False").lower() in ("1", "true", "yes", "on")
+# Default to local development-friendly settings so the app runs correctly
+# without needing environment configuration for every first-time setup.
+DEBUG = os.environ.get("DEBUG", "True").lower() in ("1", "true", "yes", "on")
 
 ALLOWED_HOSTS = [
     "my-portifolio-98rm.onrender.com",
@@ -153,8 +160,15 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'myportifolio', 'static'),)
 
 STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        "BACKEND": (
+            "whitenoise.storage.CompressedManifestStaticFilesStorage"
+            if not DEBUG
+            else "django.contrib.staticfiles.storage.StaticFilesStorage"
+        ),
     },
 }
 
