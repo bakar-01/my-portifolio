@@ -8,7 +8,7 @@
 # Font & Color Variables
 --------------------------------------------------------------*/
 :root {
-  --background-color: rgb(255, 255, 255);
+  --background-color: rgb(249, 246, 246);
   --surface-color: #ffffff;
   --default-color-rgb: 3, 3, 2;
   --heading-color-rgb: 15, 23, 42;
@@ -140,7 +140,7 @@ h6 { font-size: 1rem; }
 --------------------------------------------------------------*/
 .hero-modern {
   position: relative;
-  background: white;
+  background: rgb(148, 148, 148);
   overflow: hidden;
 }
 
@@ -1122,7 +1122,7 @@ h6 { font-size: 1rem; }
 # Footer - Modern
 --------------------------------------------------------------*/
 .footer-modern {
-  background: white;
+  background: rgb(142, 141, 141);
   border-top: 1px solid rgba(20, 157, 221, 0.1);
 }
 
