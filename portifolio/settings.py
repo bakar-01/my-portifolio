@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 # import dj_database_url
 
 
@@ -22,6 +23,7 @@ def _split_env_list(value):
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(BASE_DIR / ".env")
 
 
 # Quick-start development settings - unsuitable for production
@@ -31,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-k%-dx%ei*&d+vr5jhd(1@v7!cr+=9ch7&a6dtja@si5w&@1s4@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", "False").lower() in ("1", "true", "yes", "on")
 
 ALLOWED_HOSTS = [
     "my-portifolio-98rm.onrender.com",
@@ -157,34 +159,38 @@ STORAGES = {
 }
 
 # Email notifications
+ADMIN_EMAIL = os.environ.get("ADMIN_EMAIL", "")
 CONTACT_NOTIFICATION_RECIPIENTS = _split_env_list(
-    os.environ.get("CONTACT_NOTIFICATION_RECIPIENTS", os.environ.get("ADMIN_EMAIL", ""))
+    os.environ.get("CONTACT_NOTIFICATION_RECIPIENTS", "")
 )
+if ADMIN_EMAIL:
+    CONTACT_NOTIFICATION_RECIPIENTS.append(ADMIN_EMAIL)
+CONTACT_NOTIFICATION_RECIPIENTS = list(dict.fromkeys(CONTACT_NOTIFICATION_RECIPIENTS))
 
 ADMINS = [
     (os.environ.get("ADMIN_NAME", "Site Admin"), email)
     for email in CONTACT_NOTIFICATION_RECIPIENTS
 ]
 
-DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL", "webmaster@localhost")
-SERVER_EMAIL = os.environ.get("SERVER_EMAIL", DEFAULT_FROM_EMAIL)
 EMAIL_BACKEND = os.environ.get(
     "EMAIL_BACKEND",
     "django.core.mail.backends.console.EmailBackend"
     if DEBUG
     else "django.core.mail.backends.smtp.EmailBackend",
 )
-EMAIL_HOST = os.environ.get("EMAIL_HOST", "localhost")
-EMAIL_PORT = int(os.environ.get("EMAIL_PORT", "25"))
+EMAIL_HOST = os.environ.get("EMAIL_HOST", "smtp.gmail.com")
+EMAIL_PORT = int(os.environ.get("EMAIL_PORT", "587"))
 EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "")
-EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS", "").lower() in (
+DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL", EMAIL_HOST_USER)
+SERVER_EMAIL = os.environ.get("SERVER_EMAIL", DEFAULT_FROM_EMAIL)
+EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS", "True").lower() in (
     "1",
     "true",
     "yes",
     "on",
 )
-EMAIL_USE_SSL = os.environ.get("EMAIL_USE_SSL", "").lower() in (
+EMAIL_USE_SSL = os.environ.get("EMAIL_USE_SSL", "False").lower() in (
     "1",
     "true",
     "yes",

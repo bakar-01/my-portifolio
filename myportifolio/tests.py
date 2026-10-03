@@ -87,6 +87,21 @@ class ErrorHandlingTests(TestCase):
         self.assertIn("Ada Lovelace", notification.body)
         self.assertIn("View this message in Django admin", notification.body)
 
+    @override_settings(CONTACT_NOTIFICATION_RECIPIENTS=[], ADMIN_EMAIL="owner@example.com")
+    def test_contact_form_sends_notification_to_admin_email(self):
+        form_data = {
+            "name": "Katherine Johnson",
+            "email": "katherine@example.com",
+            "subject": "Contact request",
+            "message": "Please get in touch.",
+        }
+
+        response = self.client.post(reverse("index"), form_data)
+
+        self.assertRedirects(response, reverse("index"), fetch_redirect_response=False)
+        self.assertEqual(len(mail.outbox), 1)
+        self.assertIn("owner@example.com", mail.outbox[0].to)
+
     def test_contact_notification_failure_does_not_block_submission(self):
         form_data = {
             "name": "Grace Hopper",

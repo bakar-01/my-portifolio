@@ -51,6 +51,9 @@ def _site_profile():
 
 def _contact_notification_recipients(profile):
     recipients = list(getattr(settings, "CONTACT_NOTIFICATION_RECIPIENTS", []))
+    admin_email = getattr(settings, "ADMIN_EMAIL", "")
+    if admin_email:
+        recipients.append(admin_email)
     if getattr(profile, "pk", None) and profile.email:
         recipients.append(profile.email)
 
